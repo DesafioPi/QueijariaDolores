@@ -91,23 +91,43 @@
 </body>
 
 <script>
+    
+    function exibirSalas(idSala) {
 
-    function exibirSalas() {
-        JSON.parse(sessionStorage.SALAS).forEach(item => {
-            document.getElementById("cardSalas").innerHTML += `
+        fetch(`/medidas/tempo-real/${idSala}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                obterdados(idSala);
+                // alertar(novoRegistro, idSala);
+                // console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                // console.log(novoRegistro);
+
+                document.getElementById("cardSalas").innerHTML += `
                     <div class="card-aquario">
                         <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
+                            <h1>${novoRegistro.temperatura}</h1>
                         </div>
                         <div class="desc-aquario">
                         <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
+                            <p id="temp_aquario"> ${item.id}-°C</p>
                         </div>
                         <div class="cor-alerta" id="card_${item.id}"></div>
                     </div>
                     </div>
                     `
-        });
+
+                proximaAtualizacao = setTimeout(() => exibirSalas(idSala), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => exibirSalas(idSala), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
     }
 
 </script>
