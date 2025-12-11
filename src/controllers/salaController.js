@@ -11,7 +11,7 @@ function buscarSalasPorEmpresa(req, res) {
     }
   }).catch(function (erro) {
     console.log(erro);
-    console.log("Houve um erro ao buscar os aquarios: ", erro.sqlMessage);
+    console.log("Houve um erro ao buscar as salas: ", erro.sqlMessage);
     res.status(500).json(erro.sqlMessage);
   });
 }
