@@ -20,7 +20,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<body onload="validarSessao(), exibirSalas(),  atualizacaoPeriodica()">
 
     <div class="janela">
 
@@ -85,7 +85,7 @@
                 </div>
             </div>
 
-            <div class="cards" id="cardAquarios">
+            <div class="cards" id="cardSalas">
 
             </div>
 
@@ -97,9 +97,9 @@
 
 <script>
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
+    function exibirSalas() {
+        JSON.parse(sessionStorage.SALAS).forEach(item => {
+            document.getElementById("cardSalas").innerHTML += `
                     <div class="card-aquario">
                         <div class="title-aquario">
                             <h1>${item.descricao}</h1>
