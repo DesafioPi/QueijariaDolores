@@ -176,7 +176,7 @@ body {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url(https://www.ficsi.in/blog/wp-content/uploads/2025/08/Blog-3.jpg);
   background-size: cover;
 }
 
@@ -188,12 +188,12 @@ body {
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
+  background-color: rgba(0,0,0,0.6) ;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: #ecb100;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -218,7 +218,7 @@ body {
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
+  border: 2px solid #ecb100;
   text-align: center;
   border-radius: 10px;
   margin: 0;
@@ -241,6 +241,10 @@ body {
   padding: 5px 0;
 }
 
+.campo input{
+background-color: rgba(0, 0, 0, 0.61);
+}
+
 .botao {
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
@@ -248,8 +252,8 @@ body {
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
-  color: #fff;
-  background-color: #ED145B;
+  color: black;
+  background-color: #ecb100;
   width: 120px;
   height: 30px;
   align-self: center;
